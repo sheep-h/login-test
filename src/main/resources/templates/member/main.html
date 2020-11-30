@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Mmember Main</title>
+</head>
+<body>
+	<h1 th:text="${me.getMemberName()}"></h1>
+
+	<div>
+		<a th:if="${me.getMemberId() eq 'admin'}" th:href="@{/admin}">회원 목록</a>
+	</div>
+
+	<form th:action="@{/logout}" th:method="post">
+		<button type="submit">logout</button>
+	</form>
+</body>
+</html>
